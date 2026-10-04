@@ -1,0 +1,27 @@
+---
+import Layout from '../Layouts/layout.astro';
+import Blogcard from '../components/blogcard.astro';
+---
+<Layout
+    title="Blog | みりん星"
+    pageTitle='ブログ'
+    pageDescription='日々のことをのんびり書いています'
+>
+
+    <section class="blog-list">
+        <Blogcard
+            date='2026.10.04'
+            title='サイトを作りました！'
+            description='新しく自分のサイトを作りました'
+            href='#'
+        />
+    </section>
+
+</Layout>
+
+<style>
+    .blog-list {
+        display: grid;
+        gap: 25px;
+    }
+</style>

@@ -1,0 +1,48 @@
+---
+interface Props{
+    date: string;
+    title: string;
+    description: string;
+    href: string;
+}
+
+const { date, title, description, href} = Astro.props;
+---
+
+<article class="blog-card">
+    <div class="blog-date">{date}</div>
+    <h2>{title}</h2>
+    <p>{description}</p>
+    <a href={href} class="read-more">
+        続きを読む→
+    </a>
+</article>
+
+<style>
+    .blog-card {
+        background-color: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 25px 30px;
+    }
+
+    .blog-date {
+        color: var(--pink);
+        font-size: 0.9rem;
+    }
+
+    .blog-card h2 {
+        margin: 8px 0;
+    }
+
+    .blog-card p {
+        margin: 0 0 15px;
+        color: var(--text-light);
+    }
+
+    .read-more {
+        color: var(--pink);
+        text-decoration: none;
+        font-weight: bold;
+    }
+</style>

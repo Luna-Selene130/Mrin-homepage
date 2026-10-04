@@ -1,0 +1,119 @@
+---
+import Layout from '../Layouts/layout.astro';
+---
+
+<Layout 
+	title="About | みりん星"
+	pageTitle='自己紹介'
+	pageDescription='はじめまして、みりん星です🌟'
+>
+
+	<section class="about-block profile">
+		<img
+			src="/images/top-image.png"
+			alt="プロフィール画像"
+			class="profile-image"
+		/>
+
+		<div>
+			<h2>みりん星</h2>
+
+			<p>
+				KAITに所属するD科です。<br />
+				最近ツイ廃できてなくて困ってます。				
+			</p>
+		</div>
+	</section>
+
+	<section class="about-block">
+		<h2>好きなもの</h2>
+
+		<div class="like-list">
+			<div>
+				<h3>ゲーム</h3>
+				<p>こまめにこつこつゲームしてます</p>
+				<p>原神／カービィ／Cities: Skyline等々……</p>
+			</div>
+
+			<div>
+				<h3>音楽</h3>
+				<p>ボカロよく聞きます。好きなボカロP載せておきます</p>
+				<p>ぽわぽわP／じん／wowaka等々……</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="about-block">
+		<h2>このサイトについて</h2>
+
+		<p>
+			このサイトでは日々の記録を残したり、<br>
+			のほほんと私のことを載せていくサイトです。
+		</p>
+	</section>
+</Layout>
+
+<style>
+	.about-block {
+		margin-bottom: 50px;
+		padding-bottom: 40px;
+		border-bottom: 1px solid var(--border);
+	}
+
+	.about-block:last-child {
+		margin-bottom: 0;
+		padding-bottom: 0;
+		border-bottom: none;
+	}
+
+	.profile {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 40px;
+		background-color: var(--surface);
+		border: 1px solid var(--border);
+		border-radius: 20px;
+		padding: 35px;
+	}
+
+	.profile-image {
+		width: 160px;
+		height: 160px;
+		object-fit: cover;
+		border-radius: 50%;
+	}
+
+	.like-list h3 {
+		margin-bottom: 5px;
+	}
+
+	.like-list p {
+		margin-top: 5px;
+	}
+
+	.like-list {
+		display: grid;
+		grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+		gap: 30px;
+	}
+
+	@media (max-width: 700px) {
+		.profile {
+			flex-direction: column;
+			text-align: center;
+		}
+
+		.like-list {
+			display: block;
+		}
+
+		.like-list > div {
+			margin-bottom: 25px;
+		}
+
+		.like-list > div:last-child {
+			margin-bottom: 0;
+		}
+	}
+</style>

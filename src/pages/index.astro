@@ -1,0 +1,163 @@
+---
+import Layout from '../Layouts/layout.astro';
+import News from '../components/news.astro';
+---
+
+<Layout 
+	title="ホーム｜みりん星のサイト"
+>
+
+	<section class="top">
+
+		<div class="top-text">
+			<p class="small-title">Mirin's Site</p>
+
+			<h1>好き放題に<br>のんびり</h1>
+			<p>ゆる～いサイトです</p>
+			<a href="/about" class="button">
+				自己紹介を見る →
+			</a>
+		</div>
+		
+		<img src="/images/top-image.png" alt="トップ画像" />
+		
+	</section>
+	
+	<News />
+
+	<section class="menu-section">
+		<h2>このサイトについて</h2>
+		
+		<div class="menu-grid">
+
+			<a href="/about" class="menu-card">
+				<span>🌸</span>
+				<h3>自己紹介</h3>
+				<p>私について紹介します</p>
+			</a>
+
+			<a href="/blog" class="menu-card">
+				<span>📝</span>
+				<h3>ブログ</h3>
+				<p>日々のまったり記録</p>
+			</a>
+
+			<a href="/links" class="menu-card">
+				<span>🔗</span>
+				<h3>リンク</h3>
+				<p>SNSや友達のサイト</p>
+			</a>
+
+		</div>
+
+	</section>
+
+</Layout>
+
+<style>
+	.top {
+		position: relative;
+		min-height: 450px;
+		background-color: var(--surface);
+		border: 1px solid var(--border);
+		border-radius: 25px;
+		overflow: hidden;
+		margin-bottom: 60px;
+		display: flex;
+		align-items: center;
+	}
+	
+	.top img{
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	
+	.top-text{
+		position: relative;
+		z-index: 2;
+		width: fit-content;
+		padding: 30px 35px;
+		margin: 40px;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		background-color: rgba(255, 255, 255, 0.65);
+		border-radius: 15px;
+	}
+
+	.small-title {
+		color: var(--pink);
+		font-weight: bold;
+	}
+
+	.top h1 {
+		line-height: 1.4;
+	}
+
+	.button {
+		display: inline-block;
+		width: fit-content;
+		margin-top: 20px;
+		padding: 10px 25px;
+		background-color: var(--pink);
+		color: var(--surface);
+		border-radius: 999px;
+		text-decoration: none;
+	}
+
+	.menu-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+		gap: 20px;
+	}
+
+	.menu-card {
+		background: var(--surface);
+		border: 1px solid var(--border);
+		border-radius: 18px;
+		padding: 25px;
+		text-decoration: none;
+		transition: transform 0.2s;
+	}
+
+	.menu-card:hover {
+		transform: translateY(-5px);
+	}
+
+	.menu-card span{
+		font-size: 1.5rem;
+	}
+
+	.menu-card h3 {
+		margin: 10px 0 5px;
+	}
+
+	.menu-card p {
+		margin: 0;
+		font-size: 0.9rem;
+		color: var(--text-light);
+	}
+
+	@media (max-width: 700px) {
+
+		.top {
+			min-height: 450px;
+			margin: 0 0 40px;
+			justify-content: center;
+		}
+
+		.top-text {
+			width: auto;
+			margin: 20px;
+			padding: 25px;
+			justify-content: center;
+		}
+
+		.menu-grid {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+</style>

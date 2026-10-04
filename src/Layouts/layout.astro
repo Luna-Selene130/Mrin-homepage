@@ -1,0 +1,60 @@
+---
+import Header from "../components/header.astro";
+import Footer from "../components/footer.astro";
+import '../styles/global.css'
+
+interface Props {
+	title: string;
+	pageTitle?: string;
+	pageDescription?: string;
+}
+
+const { title, pageTitle, pageDescription } = Astro.props;
+---
+
+<html lang="ja">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="description" content="みりん星のサイト" />
+		<title>{title}</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body id="top">
+		<Header />
+
+		<main>
+			{pageTitle && (
+				<section class="page-header">
+					<h1>{pageTitle}</h1>
+					{pageDescription && (
+						<p>{pageDescription}</p>
+					)}
+				</section>
+			)}
+
+			<slot />
+		</main>
+
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.page-header {
+		margin-bottom: 40px;
+	}
+
+	.page-header h1 {
+		margin-bottom: 10px;
+	}
+
+	.page-header p {
+		color: var(--text-light);
+	}
+</style>

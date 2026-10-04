@@ -1,0 +1,60 @@
+---
+import Layout from "../Layouts/layout.astro";
+import LinkCard from "../components/linkcard.astro";
+---
+
+<Layout
+    title="Links | みりん星"
+    pageTitle="リンク"
+    pageDescription="よかったらのぞいていってください"
+>
+    <section>
+        <h2>自分のリンク</h2>
+
+        <div class="links">    
+            <LinkCard
+            name="みりん星のサイト"
+            description="このサイトです"
+            url="/"
+            icon=""
+            />
+            
+            <LinkCard
+            name="Twitter"
+            description="テキトーにつぶやいてます"
+            url="https://x.com/Mirin_2468"
+            icon=""
+            />
+        </div>
+    </section>
+
+    <section>
+        <h2>友達のサイト</h2>
+        <div class="friend-links">
+        </div>
+    </section>
+
+</Layout>
+
+<style>
+    section {
+        margin-bottom: 50px;
+    }
+
+    .links {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250, 1fr));
+        gap:15px;
+    }
+
+    .friend-links {
+        display: grid;
+        gap: 15px; 
+    }
+
+    @media (max-width: 600px) {
+        .links {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

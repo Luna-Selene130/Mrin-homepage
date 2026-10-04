@@ -1,0 +1,59 @@
+---
+---
+<section class="news-section">
+    <h2>NEWS</h2>
+
+    <div class="news-list">
+
+        <article class="news-item">
+            <time datetime="2026-10-04">2026.10.04</time>
+            <p>サイトを作りました！</p>
+        </article>
+
+    </div>
+</section>
+
+<style>
+    .news-section {
+        margin-bottom: 50px;
+    }
+
+    .news-list {
+        background: white;
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        overflow: hidden;
+    }
+
+    .news-item {
+        display: flex;
+        gap: 30px;
+        padding: 18px 25px;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .news-item:last-child {
+        border-bottom: none;
+    }
+
+    .news-item time{
+        color: var(--pink);
+        font-size: 0.9rem;
+        white-space: nowrap;
+    }
+
+    .news-item p {
+        margin: 0;
+    }
+
+    @media (max-width: 700px) {
+        .news-item {
+            display: block;
+        }
+
+        .news-item time {
+            display: block;
+            margin-bottom: 5px;
+        }
+    }
+</style>
